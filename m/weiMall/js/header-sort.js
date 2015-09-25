@@ -7,8 +7,8 @@ $(function(){
 
     // 全部分类-iscroll
     var myScroll1,myScroll2;
-    myScroll1 = new IScroll('#J_sortList .isScroll', {click: true });                   // 全部分类iscroll
-    // myScroll2 = new IScroll('#J_wrapper', {click: true });
+   // myScroll1 = new IScroll('#J_sortList .isScroll', {click: false });                   // 全部分类iscroll
+    // myScroll2 = new IScroll('#J_wrapper', {click: false });
     
 
 
@@ -37,13 +37,13 @@ var a = function (e) { e.preventDefault(); }
     // 列表移出
     $J_all.on('click',function(){
         $J_sortList.animate({'left':0},300);
-        document.addEventListener('touchmove',a,false);
+        // document.addEventListener('touchmove',a,false);
         // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     });
     // 列表移走
     $J_sortList.find('.cancel').on('click',function(){
         $J_sortList.animate({'left':-_width},300);
-        document.removeEventListener('touchmove',a,true);
+        // document.removeEventListener('touchmove',a,true);
         // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     });
     // 选择分类

@@ -5,6 +5,13 @@
  */
 
 
+element::-webkit-scrollbar{
+    display: none;
+}
+/* 隐藏所有滚动条 */
+::-webkit-scrollbar{
+    display: none;
+}
 
 /* @头部-排序_20150914
  -----------------------------------------------------*/
@@ -28,12 +35,13 @@
 
 /* @全部分类 列表_20150914
  -----------------------------------------------------*/
-.list-wrapper{background-color:#fff;position:fixed;top:0;left:0;width:100%;bottom:0;z-index:2;opacity:0}
+.list-wrapper{background-color:#fff;position:fixed;top:0;left:0;width:100%;bottom:0;z-index:10;opacity:0}
 .list-wrapper h2{height:44px;line-height:44px;padding:0 10px;border-bottom:1px solid #d7d7d7;}
 .list-wrapper h2 span{font-size:15px;}
 .list-wrapper h2 a{float:right;font-size:12px;}
 
-.isScroll{position:absolute;top:45px;left:0;right:0;bottom:0;overflow:hidden;}
+.isScroll{height:100%;overflow-y:scroll;}
+.isScroll .list-mod{padding-bottom:150px}
 .list-mod a{display:block;width:100%;height:44px;line-height:44px;}
 .list-mod .list-item{border-bottom:1px solid #d7d7d7;background-color:#fff}
 .list-mod .list-item a{text-indent:12px}
@@ -41,5 +49,5 @@
 .list-mod .sub-item a{text-indent:31px}
 
 
-.wrapper{position:absolute;top:55px;left:0;right:0;bottom:0;z-index:10}
-.wrapper ul.list{padding-top:0;padding-bottom:100px}
+.wrapper{margin-top:55px;height:100%;z-index:2}
+.wrapper ul.list{padding-top:0;padding-bottom:100px;overflow-y:scroll;}
