@@ -5,31 +5,20 @@
 
 $(function(){
 
+
+
     // 全部分类-iscroll
     var myScroll1,myScroll2;
-   // myScroll1 = new IScroll('#J_sortList .isScroll', {click: false });                   // 全部分类iscroll
-    // myScroll2 = new IScroll('#J_wrapper', {click: false });
-    
-
+    myScroll1 = new IScroll('#J_sortList .isScroll',{click: true,bounce:false }); // 全部分类iscroll
+    // myScroll2 = new IScroll('#J_wrapper', {click: true,bounce:false,preventDefault:false });
 
     var _width = document.documentElement.clientWidth; // 浏览器宽度
-
 
     // 头部导航-综合排序
     var $J_sort = $('#J_sort');
     $J_sort.find('.sub-sort').css('width',_width);      // 初始化头部导航-综合排序二级导航宽度
 
-    // $J_sort.on('click',function(){
-    //     var _this = $(this);
-    //     if(_this.hasClass('show')){
-    //         _this.find('.sub-sort').stop().animate({height:0},200).end()
-    //             .removeClass('show');
-    //     }else{
-    //         _this.find('.sub-sort').stop().animate({height:92},200).end()
-    //             .addClass('show')
-    //     }
-    // });
-var a = function (e) { e.preventDefault(); }
+
     // 头部导航-所有列表
     var $J_all = $('#J_all'),
         $J_sortList = $('#J_sortList');     // 列表
@@ -37,19 +26,11 @@ var a = function (e) { e.preventDefault(); }
     // 列表移出
     $J_all.on('click',function(){
         $J_sortList.animate({'left':0},300);
-        // document.addEventListener('touchmove',a,false);
-        // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     });
     // 列表移走
     $J_sortList.find('.cancel').on('click',function(){
         $J_sortList.animate({'left':-_width},300);
-        // document.removeEventListener('touchmove',a,true);
-        // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     });
-    // 选择分类
-    $('#J_sortList').on('click','.',function(){
-        
-    })
 
     // 导航-点击变成橙色
     $('.sort-list li').on('click',function(){
@@ -82,7 +63,25 @@ var a = function (e) { e.preventDefault(); }
         $(this).parents('.sub-sort').stop().animate({height:0},200).end();
     });
 
+    // var t1 = null;
 
+    // $('#J_wrapper').on('click','.product-mod',function(evt){
+    //     evt.preventDefault();
+    //     var href=$(this).href;
 
+    //     if (t1 == null){
+    //         t1 = new Date().getTime();
+    //     }else{
+    //         var t2 = new Date().getTime();
+    //         if(t2 - t1 < 500){
+    //             t1 = t2;
+    //             return;
+    //         }else{
+    //             t1 = t2;
+    //         }
+    //     }
+    //     alert(1);
+    //     // window.location.href=$(this).href;
+    // });
 
 });
