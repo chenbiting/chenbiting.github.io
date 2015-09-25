@@ -18,7 +18,6 @@ $(function(){
     var $J_sort = $('#J_sort');
     $J_sort.find('.sub-sort').css('width',_width);      // 初始化头部导航-综合排序二级导航宽度
 
-
     // 头部导航-所有列表
     var $J_all = $('#J_all'),
         $J_sortList = $('#J_sortList');     // 列表
@@ -63,25 +62,25 @@ $(function(){
         $(this).parents('.sub-sort').stop().animate({height:0},200).end();
     });
 
-    // var t1 = null;
+    var t1 = null;
 
-    // $('#J_wrapper').on('click','.product-mod',function(evt){
-    //     evt.preventDefault();
-    //     var href=$(this).href;
+    $('#J_wrapper').on('click','.product-mod',function(evt){
+        evt.preventDefault();
+        var href=$(this).href;
 
-    //     if (t1 == null){
-    //         t1 = new Date().getTime();
-    //     }else{
-    //         var t2 = new Date().getTime();
-    //         if(t2 - t1 < 500){
-    //             t1 = t2;
-    //             return;
-    //         }else{
-    //             t1 = t2;
-    //         }
-    //     }
-    //     alert(1);
-    //     // window.location.href=$(this).href;
-    // });
+        if (t1 == null){
+            t1 = new Date().getTime();
+        }else{
+            var t2 = new Date().getTime();
+            if(t2 - t1 < 500){
+                t1 = t2;
+                return;
+            }else{
+                t1 = t2;
+            }
+        }
+        window.location.href=href;
+
+    });
 
 });
